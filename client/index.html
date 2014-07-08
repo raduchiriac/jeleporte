@@ -1,0 +1,21 @@
+<head>
+  <title>je.le.porte</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+</head>
+
+<body>
+	{{> navbar}}
+	{{> mapbox}}
+</body>
+
+<template name="navbar">
+	<div class="navbar toplayer">
+		<a class="add-me a-block" href="#">Randomly sign in (in Paris)</a>
+		{{> loginButtons}}
+		<a class="clear-all a-block" href="#">Remove all users (be careful)</a>
+	</div>
+</template>
+
+<template name="mapbox">
+	<div id="mapbox-map"></div>
+</template>

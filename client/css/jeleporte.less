@@ -1,0 +1,50 @@
+@import "mixins";
+@base: #b30087;
+
+body {
+	margin:0;
+	padding:0;
+}
+#mapbox-map {
+	position:absolute;
+	top:0; bottom:0;
+	width:100%;
+}
+#login-buttons {
+	position: absolute;
+	right:160px;
+	top:10px;
+	.login-link-text {
+		float: right;
+		margin-right: -140px;
+		background: white;
+		padding: 5px 15px;
+		.border-radius(5px);
+		border: 1px solid lightgrey;
+	}
+	#login-dropdown-list {
+		left: -54px;
+	}
+}
+.toplayer {
+	position: relative;
+	top:0;
+	z-index: 99;
+	height: 100%;
+	.a-block {
+		padding: 5px;
+		text-align: center;
+		display: block;
+		color:white;
+		font-size: 16px;
+	}
+	.clear-all {
+		bottom: 0;
+		font-size: 10px;
+		.hexa-to-rgba(@base, 0.3);
+	}
+	.add-me{
+		.hexa-to-rgba(@base, 0.7);
+		border-bottom: 1px solid @base;
+	}
+}

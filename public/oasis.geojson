@@ -1,0 +1,83 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Corner Shop"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3770809173583984,
+          48.87228020390619
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Nocibé Opéra"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3427486419677734,
+          48.87024780944447
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Sephora C14b"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3168277740478516,
+          48.846756373063506
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Sara, Machine de Parfum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2972583770751953,
+          48.87391735051673
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Shoppy Fregrance"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3327064514160156,
+          48.83444155423872
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Marionnaud 20e"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.394332885742187,
+          48.849354525964365
+        ]
+      }
+    }
+  ]
+}
