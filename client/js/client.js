@@ -1,5 +1,5 @@
-var map, featureLayer, walkersGroup, myself;
-
+var map, featureLayer, walkersGroup, myself, myselfAccuracy;
+var myselfLocated = false;
 
 // ---------------------------------
 // <TEMPLATES>
@@ -39,13 +39,16 @@ Template.mapbox.rendered = function() {
             walkersGroup.eachLayer(function(layer) {
                 console.log(layer);
             });
-            //console.log('allbounds', inBounds);
         });
 
-    myself = L.marker([-73, 40], {
+    myself = L.marker([0, 0], {
         icon: L.mapbox.marker.icon({
-            'marker-color': '#f86767',
+            'marker-color': '#b30087',
         })
+    }).addTo(map);
+
+    myselfAccuracy = L.circle([0, 0], 0, {
+        stroke: false
     }).addTo(map);
 
     navigator.geolocation.watchPosition(updateCurrentPosition, function(error) {
@@ -57,14 +60,6 @@ Template.mapbox.rendered = function() {
         enableHighAccuracy: true
     });
 };
-
-updateCurrentPosition = function(pos) {
-    var lat = pos.coords.latitude;
-    var lon = pos.coords.longitude;
-    var accuracy = pos.coords.accuracy;
-    myself.setLatLng([lat, lon]).closePopup().unbindPopup().bindPopup('<br/><h3>Accuracy: ' + accuracy + 'm</h3>');
-    map.setView([lat, lon], 16);
-}
 
 // ------------ navbar -------------
 Template.navbar.events({
@@ -87,3 +82,15 @@ Meteor.subscribe('allWalkers');
 
 // </SUBSCRIBES>
 // ---------------------------------
+
+updateCurrentPosition = function(pos) {
+    var lat = pos.coords.latitude;
+    var lon = pos.coords.longitude;
+    var accuracy = parseInt(pos.coords.accuracy);
+    myself.setLatLng([lat, lon]).closePopup().unbindPopup().bindPopup('<br/><h4>Accuracy: ' + accuracy + 'm</h4>');
+    if (!myselfLocated) {
+        map.setView([lat, lon], 16);
+        myselfLocated = true;
+    }
+    myselfAccuracy.setLatLng([lat, lon]).setRadius(accuracy);
+}
