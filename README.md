@@ -1,7 +1,7 @@
 je.le.porte
 =========
 
-Non-agnostic notification system based on user's location and predefined preferences.
+Non-agnostic notification system based on the user's location and predefined preferences.
 
   - meteor
   - mapbox
